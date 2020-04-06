@@ -1,4 +1,5 @@
 language: generic
 
 before_install: |
-  bash -c 'echo `cat /etc/os-release`'
+  cat /etc/os-release
+  ls -l
