@@ -1,0 +1,4 @@
+language: php
+
+before_install:
+  - echo `cat /etc/os-release`
