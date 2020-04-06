@@ -2,3 +2,4 @@ language: generic
 
 before_install:
   - echo "This is echo test"
+  - ls -la
