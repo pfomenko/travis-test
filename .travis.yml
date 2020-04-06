@@ -1,5 +1,4 @@
 language: generic
 
 before_install:
-  - cat /etc/os-release
-  - ls -l
+  - echo "This is echo test"
