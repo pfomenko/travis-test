@@ -1,4 +1,4 @@
 language: generic
 
 before_install:
-  - echo "This is echo test"
+  - bash -c 'echo "This is echo test"'
