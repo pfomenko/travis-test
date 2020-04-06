@@ -1,4 +1,4 @@
-language: python
+language: generic
 
-before_install:
-  - cat /etc/os-release
+before_install: |
+  cat /etc/os-release
