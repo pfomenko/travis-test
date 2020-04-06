@@ -1,15 +1,14 @@
 language: generic
 
-if: type = push
-  before_install:
-    - echo "This is push test"
-    - ls -la
-    - rm -rf folder1
-    - ls -la
+before_install:
+  
+  if: type = push
+  ls -la
+  rm -rf folder1
+  ls -la
 
-if: type = cron
-  before_install:
-    - echo "This is cron test"
-    - ls -la
-    - rm -rf folder2
-    - ls -la
+  if: type = cron
+  echo "This is cron test"
+  ls -la
+  rm -rf folder2
+  ls -la
