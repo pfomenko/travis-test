@@ -1,4 +1,5 @@
 language: generic
 
 before_install:
-  - echo "test"
+  - if: type = push
+    echo "test"
