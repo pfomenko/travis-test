@@ -2,12 +2,13 @@ language: generic
 
 before_install:
   
-  if: type = push
+  - if: type = push
+  echo "This is push test"
   ls -la
   rm -rf folder1
   ls -la
 
-  if: type = cron
+  - if: type = cron
   echo "This is cron test"
   ls -la
   rm -rf folder2
