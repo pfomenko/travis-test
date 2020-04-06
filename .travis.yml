@@ -1,5 +1,5 @@
 language: generic
 
-before_install: |
-  cat /etc/os-release
-  ls -l
+before_install:
+  - cat /etc/os-release
+  - ls -l
