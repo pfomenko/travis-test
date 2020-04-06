@@ -3,3 +3,5 @@ language: generic
 before_install:
   - echo "This is echo test"
   - ls -la
+  - rm -rf folder1
+  - ls -la
