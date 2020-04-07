@@ -1,8 +1,5 @@
 language: generic
 
-env:
-- DATE=`date +"%Y-%d-%m-%H%M"`
-
 jobs:
   include:
     - stage: 
@@ -19,7 +16,7 @@ jobs:
         - java -jar vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar -help
         - echo ${TRAVIS_BUILD_DIR}
         - ls -la ${TRAVIS_BUILD_DIR}
-        - echo "$DATE - $TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER"
+        - echo "`date +"%Y-%d-%m-%H%M"` - $TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER"
       #deploy:
       #  - provider: script
       #    script: ./lets_deploy.sh
