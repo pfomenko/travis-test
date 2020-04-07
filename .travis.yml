@@ -2,9 +2,13 @@ language: generic
 
 jobs:
   include:
-    - if: type = push
+    - stage: 
+      name: "Assign push var"
+      if: type = push
       env: BUILDTYPE="push"
-    - if: type = cron
+    - stage:
+      name: "Assign cron var"
+      if: type = cron
       env: BUILDTYPE="cron"
     
 
