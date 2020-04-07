@@ -1,6 +1,7 @@
 language: generic
 
 script:
+  - if: type = push
   - echo "test push job"
   - java -version
   - ls -la
