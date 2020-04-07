@@ -4,15 +4,15 @@ jobs:
   include:
     - stage: 
       name: "Tasks for push event"
-      if: type = push OR type = pull
+      if: type = push OR type = pull_request
       before_script:
         - uname -a
       script:
         - echo "This is push event"
         - java -version
-      deploy:
-        - provider: script
-          script: ./lets_deploy.sh
+      #deploy:
+      #  - provider: script
+      #    script: ./lets_deploy.sh
     - stage:
       name: "Tasks for cron event"
       if: type = cron
