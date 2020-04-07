@@ -1,7 +1,7 @@
 language: generic
 
 env:
-  - DATE=`date +"%Y-%m-%d-%H%M"`
+- DATE=`date +"%Y-%d-%m-%H%M"`
 
 jobs:
   include:
@@ -10,7 +10,6 @@ jobs:
       if: type = push OR type = pull_request
       env:
         - VERACODEWRAPPERVERSION: "20.3.6.1"
-        - VERACODEDIR: ${TRAVIS_BUILD_DIR}/veracode_`date +%Y%d%m`
       before_script:
         - uname -a
         - wget https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/20.3.6.1/vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar
@@ -18,7 +17,6 @@ jobs:
         - echo "This is push event"
         - java -version
         - java -jar vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar -help
-        - echo $VERACODEDIR
         - echo ${TRAVIS_BUILD_DIR}
         - ls -la ${TRAVIS_BUILD_DIR}
         - echo "$DATE - $TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER"
