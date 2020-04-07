@@ -3,13 +3,19 @@ language: generic
 jobs:
   include:
     - stage: 
-      name: "Assign push var"
+      name: "Tasks for push event"
       if: type = push
-      env: BUILDTYPE="push"
+      script:
+        - echo "This is push event"
+        - java -version
     - stage:
-      name: "Assign cron var"
+      name: "Tasks for cron event"
       if: type = cron
       env: BUILDTYPE="cron"
+      script:
+        - echo "This is cron event"
+        - java -version
+        - ls -la
     
 
 script:
