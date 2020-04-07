@@ -1,5 +1,4 @@
 language: generic
 
-before_install:
-  - if: type = push
-    echo "test"
+script:
+  - echo "test push job"
