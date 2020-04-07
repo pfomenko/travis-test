@@ -1,5 +1,8 @@
 language: generic
 
+env:
+  - VERACODEWRAPPERVERSION: "20.3.6.1"
+
 jobs:
   include:
     - stage: 
@@ -7,9 +10,11 @@ jobs:
       if: type = push OR type = pull_request
       before_script:
         - uname -a
+        - wget https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/20.3.6.1/vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar
       script:
         - echo "This is push event"
         - java -version
+        - java -jar vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar -help
       #deploy:
       #  - provider: script
       #    script: ./lets_deploy.sh
@@ -21,7 +26,3 @@ jobs:
         - echo "This is cron event"
         - java -version
         - ls -la
-    
-
-script:
-  - echo $BUILDTYPE
