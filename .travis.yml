@@ -10,6 +10,9 @@ jobs:
       script:
         - echo "This is push event"
         - java -version
+      deploy:
+        - provider: script
+          script: ./lets_deploy.sh
     - stage:
       name: "Tasks for cron event"
       if: type = cron
