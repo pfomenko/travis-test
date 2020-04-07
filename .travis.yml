@@ -18,6 +18,8 @@ jobs:
         - java -version
         - java -jar vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar -help
         - echo $VERACODEDIR
+        - echo ${TRAVIS_BUILD_DIR}
+        - ls -la ${TRAVIS_BUILD_DIR}
       #deploy:
       #  - provider: script
       #    script: ./lets_deploy.sh
