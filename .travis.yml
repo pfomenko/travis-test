@@ -1,7 +1,10 @@
 language: generic
 
+jobs:
+  include:
+    - if: type = push
+      env: BUILDTYPE="push"
+    
+
 script:
-  - if: type = push
-  - echo "test push job"
-  - java -version
-  - ls -la
+  - echo $BUILDTYPE
