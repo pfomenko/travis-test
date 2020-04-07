@@ -3,3 +3,4 @@ language: generic
 script:
   - echo "test push job"
   - java -version
+  - ls -la
