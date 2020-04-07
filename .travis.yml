@@ -1,13 +1,14 @@
 language: generic
 
-env:
-  - VERACODEWRAPPERVERSION: "20.3.6.1"
+
 
 jobs:
   include:
     - stage: 
       name: "Tasks for push event"
       if: type = push OR type = pull_request
+      env:
+        - VERACODEWRAPPERVERSION: "20.3.6.1"
       before_script:
         - uname -a
         - wget https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/20.3.6.1/vosp-api-wrappers-java-$VERACODEWRAPPERVERSION.jar
