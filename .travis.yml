@@ -4,6 +4,8 @@ jobs:
   include:
     - if: type = push
       env: BUILDTYPE="push"
+    - if: type = cron
+      env: BUILDTYPE="cron"
     
 
 script:
