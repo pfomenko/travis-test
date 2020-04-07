@@ -1,6 +1,7 @@
 language: generic
 
-
+env:
+  - DATE=`date +"%Y-%m-%d-%H%M"`
 
 jobs:
   include:
@@ -20,6 +21,7 @@ jobs:
         - echo $VERACODEDIR
         - echo ${TRAVIS_BUILD_DIR}
         - ls -la ${TRAVIS_BUILD_DIR}
+        - echo "$DATE - $TRAVIS_JOB_ID - $TRAVIS_JOB_NUMBER"
       #deploy:
       #  - provider: script
       #    script: ./lets_deploy.sh
