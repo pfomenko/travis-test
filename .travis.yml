@@ -5,6 +5,8 @@ jobs:
     - stage: 
       name: "Tasks for push event"
       if: type = push
+      before_script:
+        - uname -a
       script:
         - echo "This is push event"
         - java -version
