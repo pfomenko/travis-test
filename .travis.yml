@@ -1,4 +1,5 @@
 language: generic
 
 script:
-  - echo "test push job"
+  - if: type = push
+    echo "test push job"
