@@ -5,6 +5,7 @@ jobs:
     - stage: 
       name: "Tasks for push event"
       if: type = push OR type = pull_request
+      script:
         - echo "This is push event"
     - stage:
       name: "Tasks for cron event"
