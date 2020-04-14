@@ -6,7 +6,7 @@ jobs:
       name: "Tasks for push event"
       if: (type = push OR type = pull_request) AND tag =~ ^(?!veracode-).*
       script:
-        - echo "This is push event"
+        - echo "This is push event 1"
     - stage:
       name: "Tasks for cron event"
       if: type = cron OR tag =~ ^(veracode-).*
